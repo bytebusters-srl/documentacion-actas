@@ -1,0 +1,39 @@
+% 04. Macros Personalizadas, Entornos y Configuraciones Extra
+
+% 1. Configuración Global de Minted (Código Fuente)
+\setminted{
+    bgcolor=codeBackground,
+    linenos=true,          % Números de línea
+    breaklines=true,       % Rompe líneas largas automáticamente
+    fontsize=\footnotesize,
+    frame=leftline,        % Línea vertical a la izquierda
+    framesep=2mm,          % Espacio entre el código y la línea
+    rulecolor=gray!50      % Color de la línea
+}
+
+% 2. Marcado Semántico (Patrón 5)
+% Resaltar elementos técnicos dentro de los párrafos con macros personalizadas
+\newcommand{\tsql}[1]{\textcolor{brandBlue}{\texttt{#1}}}       % Para código SQL (ej. SELECT, TRY-CATCH)
+\newcommand{\componente}[1]{\colorbox{gray!15}{\texttt{#1}}}    % Para componentes web o archivos (ej. NavBar.tsx)
+
+% 3. Cajas Temáticas (Patrón 8)
+% Resaltar reglas de negocio, endpoints o teoremas
+\newtcolorbox{infoBox}[1][]{
+    colback=brandBlue!5!white,
+    colframe=brandBlue!80!black,
+    fonttitle=\bfseries,   % Título en negrita
+    title=#1,              % Título opcional para la caja
+    boxrule=1pt,           % Grosor del borde
+    arc=3pt                % Esquinas redondeadas
+}
+
+\newcommand{\espacioFirma}[3]{
+    \begin{minipage}{0.31\textwidth} % Usa el 31% del ancho de la hoja
+        \centering
+        \vspace{0.1cm}
+        \includegraphics[height=1.0cm, keepaspectratio]{#1} \\[-0.7cm] 
+        \rule{0.85\linewidth}{0.4pt} \\ % La línea será el 85% del ancho del bloque
+        {\small #2 \\[-0.2cm]
+        C.I. #3}
+    \end{minipage}
+}

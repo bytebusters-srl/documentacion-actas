@@ -1,0 +1,24 @@
+% !TEX root = main.tex
+\documentclass[11pt, a4paper]{article}   % Documento tipo article, con tamaño de letra 11pt y formato A4.
+
+% 1. Carga de configuración
+\input{config/01_packages.tex}          % Cargamos los paquetes necesarios para el documento
+\input{config/03_fonts_colors.tex}      % Cargamos colores antes del layout
+\input{config/02_layout.tex}            % Cargamos el layout después de los colores para que pueda usarlos
+\input{config/04_macros.tex}            % Cargamos las macros al final para que puedan usar todo lo anterior
+
+\begin{document}
+
+% 2. Estructura del documento
+\include{sections/00_portada}
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% Aquí usamos el (Patrón 2) Master-Child para incluir cada sección del documento. Cada sección se encuentra en un archivo separado dentro de la carpeta "sections"
+\include{sections/01_acta_02-03-26}
+\include{sections/02_acta_09-03-26}
+\include{sections/03_acta_12-03-26}
+
+\end{document}

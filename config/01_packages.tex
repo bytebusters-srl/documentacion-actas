@@ -1,0 +1,35 @@
+% 01. Paquetes y Dependencias
+
+% Idioma y codificación
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+
+% Matemáticas y símbolos
+\usepackage{amsmath, amssymb}                       % Paquetes para matemáticas avanzadas y símbolos
+
+% Geometría, Gráficos y Tablas
+\usepackage{geometry}                               % Control de márgenes      
+\usepackage{graphicx}                               % Para incluir gráficos e imágenes
+\usepackage{booktabs, colortbl, array, multirow}    % Control de tablas para mejorar la presentación de datos
+\usepackage[hypcap=false]{caption}                  % Control de leyendas para mejorar la navegación
+
+% Mejoras tipográficas
+\usepackage{microtype}                              % Mejoras tipográficas
+\usepackage{setspace}                               % Control de interlineado para mejorar la legibilidad
+\usepackage{lmodern}                                % Fuente moderna y legible
+
+% Patrones de diseño y funcionalidades (Obsidian)
+\usepackage{subfiles}                               % Capacidad de subarchivos para modularizar el documento (Compilacion Aislada - Patrón 3)
+\usepackage{placeins}                               % Control de flotantes para evitar desorden (\FloatBarrier para contener imágenes - Patrón 7)
+\usepackage[most]{tcolorbox}                        % Cajas de colores para resaltar conceptos clave (Resaltado visual - Patrón 8)
+\usepackage[outputdir=build]{minted}                % Código fuente con resaltado de sintaxis (Código modularizado - Patrón 6)  
+\usepackage{enumitem}                               % Control avanzado de listas (Listas personalizadas - Patrón 9)
+
+% Bibliografía y Comillas (csquotes tiene que estar despues de minted)
+\usepackage{csquotes}                               % Comillas inteligentes para citas
+\usepackage[backend=biber, style=ieee]{biblatex}    % Gestión de bibliografía con Biber (Gestión de referencias - Patrón 10)
+
+% Colores y Enlaces
+\usepackage{xcolor}                                 % Para definir colores personalizados
+\usepackage{hyperref}                               % Enlaces internos y externos

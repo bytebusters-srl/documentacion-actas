@@ -1,0 +1,30 @@
+% 02. Geometría, Encabezados y Metadatos PDF
+
+% 1. Configuración de Márgenes e Interlineado
+\geometry{margin=2.5cm, top=3.5cm}
+\onehalfspacing                             % Interlineado 1.5
+
+% 2. Configuración de Enlaces y Metadatos PDF
+\hypersetup{
+    bookmarksopen=true,                     % Mantener los marcadores del PDF abiertos
+    bookmarksnumbered=true,                 % Numerar los marcadores del PDF    
+    colorlinks=true,                        % Colorear los enlaces en lugar de usar cuadros
+    linkcolor=brandBlue,                    % Color para enlaces internos (capítulos, secciones)
+    filecolor=brandMagenta,                 % Color para enlaces a archivos
+    urlcolor=brandRed,                      % Color para enlaces a URLs
+    citecolor=brandGreen,                   % Color para citas bibliográficas
+    pdftitle={Plantilla - Documentación Técnica},
+    pdfauthor={Juan Diego Pardo Pozo}
+}
+
+% 3. Cabeceras y Pies de Página Dinámicos
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{\nouppercase{\leftmark}}      % Capítulo a la izquierda del encabezado
+\fancyhead[R]{\nouppercase{\rightmark}}     % Sección a la derecha del encabezado
+\fancyfoot[C]{\thepage}                     % Número de página centrado en el pie de página 
+\renewcommand{\headrulewidth}{0.4pt}        % Línea en el encabezado
+\renewcommand{\footrulewidth}{0.0pt}        % Sin línea en el pie de página
+\setlength{\headheight}{14.5pt}             % Ajuste para evitar advertencias de LaTeX sobre el espacio del encabezado
+\graphicspath{{assets/img/}}                % Ruta para imágenes (Patrón 4)
