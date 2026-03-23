@@ -1,30 +1,67 @@
-% 02. Geometría, Encabezados y Metadatos PDF
+% 02_layout.tex
+% Geometría, Encabezados, Títulos y Metadatos PDF (ISO 15289)
 
-% 1. Configuración de Márgenes e Interlineado
-\geometry{margin=2.5cm, top=3.5cm}
-\onehalfspacing                             % Interlineado 1.5
-
-% 2. Configuración de Enlaces y Metadatos PDF
-\hypersetup{
-    bookmarksopen=true,                     % Mantener los marcadores del PDF abiertos
-    bookmarksnumbered=true,                 % Numerar los marcadores del PDF    
-    colorlinks=true,                        % Colorear los enlaces en lugar de usar cuadros
-    linkcolor=brandBlue,                    % Color para enlaces internos (capítulos, secciones)
-    filecolor=brandMagenta,                 % Color para enlaces a archivos
-    urlcolor=brandRed,                      % Color para enlaces a URLs
-    citecolor=brandGreen,                   % Color para citas bibliográficas
-    pdftitle={Plantilla - Documentación Técnica},
-    pdfauthor={Juan Diego Pardo Pozo}
+% 1. Configuración de Márgenes Exactos
+\geometry{
+    a4paper,
+    inner=3cm,       % Margen izquierdo para archivo físico
+    outer=2cm,       % Margen derecho
+    top=2.5cm,       % Distancia superior
+    bottom=2.5cm,    % Distancia inferior
+    includehead,     % El encabezado va dentro del margen
+    includefoot,     % El pie de página va dentro del margen
+    headheight=28pt, 
+    headsep=0.4cm,   
+    footskip=1.0cm   
 }
+\onehalfspacing      % Interlineado 1.5 para legibilidad en lectura larga
 
-% 3. Cabeceras y Pies de Página Dinámicos
-\usepackage{fancyhdr}
+% 2. Jerarquía de Títulos (Especificaciones de Diseño)
+% Títulos de Sección (Capítulos): Helvetica, 16 pt, Negrita, Color Corporativo
+\titleformat{\chapter}[hang]
+  {\sffamily\bfseries\fontsize{16}{19.2}\selectfont\color{colorPrimario}}
+  {\thechapter.}
+  {1em}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+% Subtítulos: Helvetica, 14 pt, Negrita
+\titleformat{\section}[hang]
+  {\sffamily\bfseries\fontsize{14}{16.8}\selectfont\color{colorPrimario}}
+  {\thesection.}
+  {1em}{}
+
+% 3. Identidad Corporativa: Encabezado y Pie (Trazabilidad)
 \pagestyle{fancy}
 \fancyhf{} 
-\fancyhead[L]{\nouppercase{\leftmark}}      % Capítulo a la izquierda del encabezado
-\fancyhead[R]{\nouppercase{\rightmark}}     % Sección a la derecha del encabezado
-\fancyfoot[C]{\thepage}                     % Número de página centrado en el pie de página 
-\renewcommand{\headrulewidth}{0.4pt}        % Línea en el encabezado
-\renewcommand{\footrulewidth}{0.0pt}        % Sin línea en el pie de página
-\setlength{\headheight}{14.5pt}             % Ajuste para evitar advertencias de LaTeX sobre el espacio del encabezado
-\graphicspath{{assets/img/}}                % Ruta para imágenes (Patrón 4)
+
+% Redefinimos las marcas para capturar solo el nombre limpio del capítulo/sección
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+% Encabezado: Logo (Izq) | Título Dinámico y Estado (Der)
+\fancyhead[L]{\includegraphics[height=0.5cm, keepaspectratio]{assets/img/bytebusters/logo_horizontal.png}}
+
+% Aquí usamos \leftmark para inyectar automáticamente el nombre del capítulo actual
+\fancyhead[R]{\sffamily\footnotesize\textcolor{colorPrimario}{\textbf{\rightmark} \textbf{| Reunión Ordinaria}}}
+
+% Pie de Página: Versión e IP (Izq) | Paginación (Der)
+\fancyfoot[L]{\sffamily\footnotesize\textcolor{grisISO}{T.I.S. | Confidencial - Byte Busters S.R.L.}}
+\fancyfoot[R]{\sffamily\footnotesize\textcolor{grisISO}{Página \thepage\ de \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{grisISO}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{grisISO}\leaders\hrule height \footrulewidth\hfill}}
+
+% 4. Configuración de Metadatos y Enlaces
+\hypersetup{
+    colorlinks=true,
+    linkcolor=colorPrimario,
+    urlcolor=colorPrimario,
+    pdftitle={Manual Técnico - Estándar ISO/IEC/IEEE 15289},
+    pdfauthor={Byte Busters S.R.L.},
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    filecolor=brandMagenta,
+    citecolor=brandGreen                 
+}

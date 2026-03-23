@@ -1,16 +1,4 @@
 % 04. Macros Personalizadas, Entornos y Configuraciones Extra
-
-% 1. Configuración Global de Minted (Código Fuente)
-\setminted{
-    bgcolor=codeBackground,
-    linenos=true,          % Números de línea
-    breaklines=true,       % Rompe líneas largas automáticamente
-    fontsize=\footnotesize,
-    frame=leftline,        % Línea vertical a la izquierda
-    framesep=2mm,          % Espacio entre el código y la línea
-    rulecolor=gray!50      % Color de la línea
-}
-
 % 2. Marcado Semántico (Patrón 5)
 % Resaltar elementos técnicos dentro de los párrafos con macros personalizadas
 \newcommand{\tsql}[1]{\textcolor{brandBlue}{\texttt{#1}}}       % Para código SQL (ej. SELECT, TRY-CATCH)

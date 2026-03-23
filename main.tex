@@ -1,24 +1,40 @@
-% !TEX root = main.tex
-\documentclass[11pt, a4paper]{article}   % Documento tipo article, con tamaño de letra 11pt y formato A4.
+% main.tex
+% Estructura Principal - Manual Técnico ISO/IEC/IEEE 15289:2024 e IEEE 830
 
-% 1. Carga de configuración
-\input{config/01_packages.tex}          % Cargamos los paquetes necesarios para el documento
-\input{config/03_fonts_colors.tex}      % Cargamos colores antes del layout
-\input{config/02_layout.tex}            % Cargamos el layout después de los colores para que pueda usarlos
-\input{config/04_macros.tex}            % Cargamos las macros al final para que puedan usar todo lo anterior
+\documentclass[11pt, a4paper, twoside]{report} 
+
+% Carga de configuraciones
+\input{config/01_packages}
+\input{config/03_fonts_colors}
+\input{config/02_layout}
+\input{config/04_macros}
 
 \begin{document}
 
-% 2. Estructura del documento
+% ==========================================
+% PORTADA
+% ==========================================
 \include{sections/00_portada}
 
-\tableofcontents
-\thispagestyle{empty}
-\newpage
+% ==========================================
+% TABLA DE CONTENIDOS
+% ==========================================
+\clearpage
+\begingroup
+  \makeatletter \let\ps@plain\ps@empty \makeatother
+  \pagestyle{empty} 
+  \tableofcontents
+  \clearpage
+\endgroup
 
-% Aquí usamos el (Patrón 2) Master-Child para incluir cada sección del documento. Cada sección se encuentra en un archivo separado dentro de la carpeta "sections"
+\pagestyle{fancy}   
+\setcounter{page}{1} 
+
+\chapter{Identificación del Sistema}
 \include{sections/01_acta_02-03-26}
 \include{sections/02_acta_09-03-26}
 \include{sections/03_acta_12-03-26}
+\include{sections/04_acta_16-03-26}
+\include{sections/05_acta_19-03-26}
 
 \end{document}

@@ -1,35 +1,36 @@
-% 01. Paquetes y Dependencias
+% 01_packages.tex
 
-% Idioma y codificación
+% Codificación e idioma
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish,es-tabla]{babel}
+\usepackage[spanish,es-tabla]{babel} % Soporte en español
 
-% Matemáticas y símbolos
-\usepackage{amsmath, amssymb}                       % Paquetes para matemáticas avanzadas y símbolos
+% Familias Tipográficas (Norma de Diseño)
+\usepackage{mathptmx}  % Cuerpo: Serif (Times New Roman)
+\usepackage{helvet}    % Títulos: Sans-serif (Helvetica)
+\usepackage{courier}   % Código: Monospace (Courier New / Lucida)
 
-% Geometría, Gráficos y Tablas
-\usepackage{geometry}                               % Control de márgenes      
-\usepackage{graphicx}                               % Para incluir gráficos e imágenes
-\usepackage{booktabs, colortbl, array, multirow}    % Control de tablas para mejorar la presentación de datos
-\usepackage[hypcap=false]{caption}                  % Control de leyendas para mejorar la navegación
+% Geometría y Layout
+\usepackage{geometry}  % Control preciso de los márgenes de página
+\usepackage{setspace}  % Configuración de interlineado
+\usepackage{fancyhdr}  % Personalización de encabezados y pies de página
+\usepackage{lastpage}  % Referencia al total de páginas
+\usepackage{titlesec}  % Formateo de títulos y subtítulos
 
-% Mejoras tipográficas
-\usepackage{microtype}                              % Mejoras tipográficas
-\usepackage{setspace}                               % Control de interlineado para mejorar la legibilidad
-\usepackage{lmodern}                                % Fuente moderna y legible
+% Gráficos, Colores y Símbolos
+\usepackage{graphicx}      % Inserción de imágenes y logos
+\usepackage{xcolor}        % Definición de paleta de colores corporativa
+\usepackage{fontawesome5}  % Iconografía para avisos técnicos
+\usepackage{amssymb}       % Símbolos para checklists
 
-% Patrones de diseño y funcionalidades (Obsidian)
-\usepackage{subfiles}                               % Capacidad de subarchivos para modularizar el documento (Compilacion Aislada - Patrón 3)
-\usepackage{placeins}                               % Control de flotantes para evitar desorden (\FloatBarrier para contener imágenes - Patrón 7)
-\usepackage[most]{tcolorbox}                        % Cajas de colores para resaltar conceptos clave (Resaltado visual - Patrón 8)
-\usepackage[outputdir=build]{minted}                % Código fuente con resaltado de sintaxis (Código modularizado - Patrón 6)  
-\usepackage{enumitem}                               % Control avanzado de listas (Listas personalizadas - Patrón 9)
+% Tablas Técnicas (Diccionario de Datos y APIs)
+\usepackage{tabularx}      % Tablas autoajustables
+\usepackage{colortbl}      % Color de fondo para celdas/filas de tablas
+\usepackage{booktabs}      % Líneas profesionales para tablas
 
-% Bibliografía y Comillas (csquotes tiene que estar despues de minted)
-\usepackage{csquotes}                               % Comillas inteligentes para citas
-\usepackage[backend=biber, style=ieee]{biblatex}    % Gestión de bibliografía con Biber (Gestión de referencias - Patrón 10)
+% Cajas de Diseño y Listas
+\usepackage[most]{tcolorbox} % Cajas visuales para notas técnicas y alertas
+\usepackage{enumitem}        % Personalización de viñetas para checklists
 
-% Colores y Enlaces
-\usepackage{xcolor}                                 % Para definir colores personalizados
-\usepackage{hyperref}                               % Enlaces internos y externos
+% Navegación y Metadatos PDF
+\usepackage{hyperref}  % Generación de enlaces internos
