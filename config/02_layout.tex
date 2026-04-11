@@ -17,12 +17,13 @@
 \onehalfspacing      % Interlineado 1.5 para legibilidad en lectura larga
 
 % 2. Jerarquía de Títulos (Especificaciones de Diseño)
-% Títulos de Sección (Capítulos): Helvetica, 16 pt, Negrita, Color Corporativo
-\titleformat{\chapter}[hang]
-  {\sffamily\bfseries\fontsize{16}{19.2}\selectfont\color{colorPrimario}}
-  {\thechapter.}
-  {1em}{}
-\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+% Títulos de Sección (Capítulos): Estilo Clásico (Display) con Identidad Corporativa
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\sffamily\color{colorPrimario}} % Formato general (huge para "Capítulo X")
+  {\chaptertitlename\ \thechapter}                          % Texto "Capítulo X"
+  {20pt}                                                    % Espacio vertical estándar entre "Capítulo X" y el título
+  {\Huge}                                                   % Tamaño gigante estándar para el título del capítulo
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
 
 % Subtítulos: Helvetica, 14 pt, Negrita
 \titleformat{\section}[hang]
