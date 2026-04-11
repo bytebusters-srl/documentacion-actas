@@ -19,10 +19,10 @@
 % 2. Jerarquía de Títulos (Especificaciones de Diseño)
 % Títulos de Sección (Capítulos): Estilo Clásico (Display) con Identidad Corporativa
 \titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries\sffamily\color{colorPrimario}} % Formato general (huge para "Capítulo X")
-  {\chaptertitlename\ \thechapter}                          % Texto "Capítulo X"
-  {20pt}                                                    % Espacio vertical estándar entre "Capítulo X" y el título
-  {\Huge}                                                   % Tamaño gigante estándar para el título del capítulo
+  {\sffamily\bfseries\color{colorTitle}} % Formato general del bloque
+  {\huge\chaptertitlename\ \thechapter}     % "Capítulo X" (tamaño grande)
+  {20pt}                                    % Separación entre el número y el título
+  {\Huge}                                   % Formato específico del título del capítulo
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 
 % Subtítulos: Helvetica, 14 pt, Negrita
