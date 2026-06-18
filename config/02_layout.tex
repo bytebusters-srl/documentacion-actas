@@ -17,13 +17,26 @@
 \onehalfspacing      % Interlineado 1.5 para legibilidad en lectura larga
 
 % 2. Jerarquía de Títulos (Especificaciones de Diseño)
-% Títulos de Sección (Capítulos): Estilo Clásico (Display) con Identidad Corporativa
+% Portada de capítulo estilo "libro" (alineado a Manual Técnico): rótulo
+% "CAPÍTULO N" en gris versalita y el título en gran tamaño. Cada capítulo
+% declara un breve resumen con \resumenCapitulo{...}, que cierra la plana.
 \titleformat{\chapter}[display]
-  {\sffamily\bfseries\color{colorTitle}} % Formato general del bloque
-  {\huge\chaptertitlename\ \thechapter}     % "Capítulo X" (tamaño grande)
-  {20pt}                                    % Separación entre el número y el título
-  {\Huge}                                   % Formato específico del título del capítulo
-\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+  {\sffamily\bfseries\color{colorPrimario}}
+  {\filright\fontsize{13}{15}\selectfont\color{grisISO}\MakeUppercase{Capítulo \thechapter}}
+  {0.35cm}
+  {\fontsize{25}{29}\selectfont\filright}
+  []
+\titlespacing*{\chapter}{0pt}{55pt}{24pt}
+
+% \resumenCapitulo{texto}: sinopsis breve bajo el título del capítulo, en la
+% misma plana, cerrando con una regla de acento. Réplica del estilo del Manual Técnico.
+\newcommand{\resumenCapitulo}[1]{%
+  \vspace{0.5cm}%
+  {\color{colorAcento}\rule{2.5cm}{2pt}}\par
+  \vspace{0.45cm}%
+  {\normalfont\sffamily\fontsize{11}{15}\selectfont\color{grisISO!95!black}%
+   \itshape #1\par}%
+  \vspace{0.3cm}}
 
 % Subtítulos: Helvetica, 14 pt, Negrita
 \titleformat{\section}[hang]
